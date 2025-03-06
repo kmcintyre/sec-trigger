@@ -24,5 +24,7 @@
 *.tsbuildinfo
 next-env.d.ts
 
-twitter.key
+python/twitter_api_credentials.py
 .vscode
+python/.venv
+pytong/__pycache__
