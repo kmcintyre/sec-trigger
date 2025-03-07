@@ -1,0 +1,1 @@
+curl -X POST "https://api.twitter.com/2/tweets" -H "Authorization: OAuth AAAAAAAAAAAAAAAAAAAAAEH9zgEAAAAADjww0NiJU8XrdUOvSq9XKHVAX9M%3DCZ9z1mLZ3oop1Mlzcszn26lyj5t3FAP3qgiPLSKjNlpzPkLieE" -H "Content-type: application/json" -d '{"text":"Test"}'
