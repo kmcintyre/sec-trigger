@@ -28,3 +28,5 @@ python/twitter_api_credentials.py
 .vscode
 python/.venv
 pytong/__pycache__
+
+python/accession_number.txt
