@@ -27,6 +27,6 @@ next-env.d.ts
 python/twitter_api_credentials.py
 .vscode
 python/.venv
-pytong/__pycache__
+python/__pycache__
 
-python/accession_number.txt
+python/accession_numbers

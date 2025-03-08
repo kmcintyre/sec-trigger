@@ -9,7 +9,7 @@ accession_number = None
 reached_accession_number = False
 
 try:
-    with open('accession_number.txt', 'r') as file:
+    with open('accession_numbers/buys.txt', 'r') as file:
         content = file.read()
         old_accession_number = content.strip()
 except Exception as e:
@@ -37,7 +37,7 @@ while not reached_accession_number :
     for entry in d.entries:
         check_accession_number = entry.id.split('=')[-1]
         if accession_number is None:            
-            with open("accession_number.txt", "w") as file:
+            with open("accession_numbers/buys.txt", "w") as file:
                 file.write(check_accession_number)            
                 accession_number = check_accession_number
         if entry.category == "4":
@@ -49,6 +49,7 @@ while not reached_accession_number :
             html = requests.get(link, headers=headers)
             soup = BeautifulSoup(html.text, "html.parser")
             anchors = soup.select("div.formDiv div table tr td a[href$='xml']:not([href*='xslF345X05'])")
+            anchorLink = 'https://www.sec.gov' + soup.select("div.formDiv div table tr td a[href$='xml'][href*='xslF345X05']")[0]["href"]
             for anchor in anchors:
                 visit = 'https://www.sec.gov' + anchor["href"]
                 if visit not in visited:                
@@ -82,7 +83,7 @@ while not reached_accession_number :
                             totalDollarAmount = "${:,.0f}".format(totalAmount)
                             stockTwit += "insider purchase {} shares at ${} on {} for {} total cost".format(transactionShares, transactionPrice, date, totalDollarAmount)
                             #print(visit)
-                            print(stockTwit)
+                            print(stockTwit + ' ' + anchorLink)
                         elif len(purchases) > 1:
                             stockTwit += "insider purchases "
                             totalAmount = float(0)
@@ -99,7 +100,7 @@ while not reached_accession_number :
                                         stockTwit += ", "                                   
                             #print(visit)
                             stockTwit += " for {} total cost".format(totalDollarAmount)
-                            print(stockTwit)
+                            print(stockTwit + ' ' + anchorLink)
                     except Exception as e:
                         print(e)
                         #pass

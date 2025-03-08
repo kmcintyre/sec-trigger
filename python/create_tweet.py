@@ -7,6 +7,6 @@ client = tweepy.Client(
 )
 
 response = client.create_tweet(
-    text="This Tweet was Tweeted using Tweepy and Twitter API v2!"
+    text="$PR Quinn, William J form 4 insider purchase 250000 shares at $12.0981 on 03/05 for $3,024,525 total cost"
 )
 print(f"https://twitter.com/user/status/{response.data['id']}")
