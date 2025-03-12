@@ -6,10 +6,19 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "tickers": "tsx src/tickers.ts",
+    "ciks": "tsx src/ciks.ts"
   },
   "dependencies": {
+    "@heroui/react": "^2.7.5",
+    "framer-motion": "^12.5.0",
+    "mongoose": "^8.12.1",
     "next": "15.2.1",
+    "puppeteer": "^24.4.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-adblocker": "^2.13.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
   },
@@ -22,6 +31,7 @@
     "eslint": "^9",
     "eslint-config-next": "15.2.1",
     "tailwindcss": "^4",
+    "tsx": "^4.19.3",
     "typescript": "^5"
   }
 }
