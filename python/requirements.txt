@@ -3,3 +3,4 @@ requests
 feedparser
 bs4
 lxml
+pymongo
